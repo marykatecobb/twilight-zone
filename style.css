@@ -25,6 +25,15 @@ nav{
     font-size: 50px;
 }
 
+.nav_links a {
+    color: white; /* Default color */
+    text-decoration: none; /* Optional: remove underline */
+}
+
+.nav_links a:hover {
+    color: #7b0707; /* Color on hover */
+}
+
 nav > a.logo{
     margin-right:auto;
 }
@@ -48,6 +57,7 @@ article, footer {
 article{
     text-align: center;
     padding: 50px;
+    font-size: 25px;
 }
 
 footer{
