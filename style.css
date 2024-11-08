@@ -75,6 +75,85 @@ main > section.plotimage {
     animation: fadeInSlideDown 1s ease-out forwards; /* Apply the animation */
 }
 
+.awards {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5em;
+    align-items: center;
+}
+
+.award1, .award2, .award3 {
+    margin-bottom: 20px;
+}
+
+.award1-text, .award2-text, .award3-text, .award4-text {
+    height: 200px;
+    width: 200px;
+}
+
+.award1-text, .award3-text {
+    float: right;
+    margin-left: 100px;
+}
+
+.award2-text, .award4-text {
+    float:left;
+    margin-right: 100px;
+}
+
+.award1-image, .award2-image, .award3-image, .award4-image {
+    max-height: 160px;
+    max-width: 400px;
+}
+
+.trivia {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.flip-card {
+    height: 250px;
+    width: 250px;
+    perspective: 1000px;
+    background-color: #c0c0c0;
+    color: #7b0707;
+    margin: 20px;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    font-weight: 1000;
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    font-size: 1.5rem;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.flip-card-front{
+    padding-top: 25px;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+
 /* Keyframes for the animation */
 @keyframes fadeInSlideDown {
     from {
