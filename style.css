@@ -50,6 +50,24 @@ main > section.hero{
     text-align: center;
   }
 
+  section.bordered-text {
+    border: 5px solid white;
+    padding: 10px;
+    display: inline-block;
+}  
+
+main > section.plotimage {
+    height: 10px;
+    width: 100%;
+    display: block;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
   .subheadings {
     font-size: 2em; /* Adjust size as needed */
     opacity: 0; /* Start with the header hidden */
@@ -104,4 +122,36 @@ article{
 footer{
     text-align: center;
     padding-top: 50px;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    nav {
+        flex-direction: column;
+        margin: 20px;
+        font-size: 30px;
+    }
+
+    nav > a.button {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    main > section.hero {
+        height: auto;
+        padding: 20px;
+    }
+
+    article{
+        padding: 20px;
+        font-size: 20px;
+    }
+
+    section.bordered-text {
+        padding: 15px;
+    }
 }
