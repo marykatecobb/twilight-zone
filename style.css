@@ -50,6 +50,47 @@ main > section.hero{
     text-align: center;
   }
 
+  .subheadings {
+    font-size: 2em; /* Adjust size as needed */
+    opacity: 0; /* Start with the header hidden */
+    transform: translateY(-20px); /* Start the header slightly above its final position */
+    animation: fadeInSlideDown 1s ease-out forwards; /* Apply the animation */
+}
+
+/* Keyframes for the animation */
+@keyframes fadeInSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cast {
+    display: flex;
+    flex-direction: column;
+    gap: 50px; 
+}
+
+.cast > div {
+    display: flex;
+    align-items: center; /* Aligns image and text vertically centered */
+}
+
+.cast img {
+    width: 300px; /* Adjust the width as needed */
+    height: auto; /* Maintains aspect ratio */
+    margin-right: 15px; /* Adds space between the image and the text */
+    border-radius: 5px; /* Optional: rounds the image corners */
+}
+
+.cast p {
+    margin: 0; /* Removes default paragraph margin for better alignment */
+}
+
 article, footer {
     font-family: "Cormorant Infant", serif;
 }
