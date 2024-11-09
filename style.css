@@ -34,12 +34,25 @@ nav{
     color: #7b0707; /* Color on hover */
 }
 
-nav > a.logo{
+.logo{
     margin-right:auto;
+    grid-area: logo;
 }
 
-nav > a.button{
+.button-cast, .button-plot, .button-awards{
     margin-left: 50px;
+}
+
+.button-cast {
+    grid-area: cast;
+}
+
+.button-plot {
+    grid-area: plot;
+}
+
+.button-awards {
+    grid-area: awards;
 }
 
 main > section.hero{
@@ -68,17 +81,20 @@ main > section.plotimage {
     z-index: -1;
 }
 
-  .subheadings {
+.subheadings {
     font-size: 2em; /* Adjust size as needed */
     opacity: 0; /* Start with the header hidden */
     transform: translateY(-20px); /* Start the header slightly above its final position */
     animation: fadeInSlideDown 1s ease-out forwards; /* Apply the animation */
+    font-family: "Pirata One", system-ui; 
+    font-size: 40px;
+    text-align: center;
 }
 
 .awards {
     display: flex;
     flex-direction: column;
-    font-size: 1.5em;
+    font-size: 1em;
     align-items: center;
 }
 
@@ -215,7 +231,7 @@ footer{
         font-size: 30px;
     }
 
-    nav > a.button {
+    .button-cast, .button-plot, .button-awards {
         margin-left: 0;
         margin-top: 10px;
     }
@@ -232,5 +248,25 @@ footer{
 
     section.bordered-text {
         padding: 15px;
+    }
+}
+
+@media (max-width: 500px) {
+    nav {
+        max-width: 100vw;
+        display: grid;
+        grid-template-areas: 
+        '. logo .'
+        'cast plot awards';
+        margin: 40px;
+        grid-template-columns: repeat (3, min-content);
+    }
+
+    .logo {
+        
+    }
+
+    .button-plot {
+        padding-left: 20px;
     }
 }
