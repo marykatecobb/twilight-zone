@@ -156,7 +156,8 @@ nav a:hover {
     margin: 20px;
 }
 
-.flip-card:hover .flip-card-inner {
+.flip-card:hover .flip-card-inner, 
+.flip-card.flipped .flip-card-inner { 
     transform: rotateY(180deg);
 }
 
@@ -280,18 +281,17 @@ footer {
     }
 
     nav {
-        display: grid;
-        grid-template-areas: 
-            '. logo .'
-            'cast plot awards'; 
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Align links to the left */
         margin: 20px;
-        grid-template-columns: 0.3fr 0.3fr 0.3fr; 
+        font-size: 24px; /* Adjust font size if needed */
     }
 
     nav a {
-        display: block; 
-        text-align: center; 
-        margin-bottom: 5px; 
+        display: block;
+        margin-bottom: 10px; /* Add spacing between links */
+        text-align: left; /* Left-align text inside the links */
     }
 
     .button-cast, .button-plot, .button-awards {
