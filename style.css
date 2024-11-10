@@ -1,4 +1,4 @@
-body{
+body {
     background-color: black;
 }
 
@@ -6,40 +6,56 @@ body{
     font-family: "Pirata One", system-ui;
     font-weight: 400;
     font-style: normal;
-  }
-  
+}
+
 .cormorant-infant-regular {
     font-family: "Cormorant Infant", serif;
     font-weight: 400;
     font-style: normal;
-  }
+}
 
-header, main, footer{
+header, main, footer {
     color: white;
 }
 
-nav{
-    display:flex;
+nav {
+    display: flex;
     margin: 50px;
     font-family: "Pirata One", system-ui;
     font-size: 50px;
 }
 
-.nav_links a {
-    color: white; /* Default color */
-    text-decoration: none; /* Optional: remove underline */
+nav a {
+    color: white; 
+    text-decoration: none; 
 }
 
-.nav_links a:hover {
-    color: #7b0707; /* Color on hover */
+nav a:hover {
+    color: #7b0707; 
 }
 
-.logo{
-    margin-right:auto;
+
+.header-container {
+    display: flex;
+    justify-content: center; 
+    margin-bottom: 20px; 
+}
+
+.header-image {
+    max-width: 100%; 
+    height: auto; 
+}
+
+.header-image + p {
+    padding-top: 20px; 
+}
+
+.logo {
+    margin-right: auto;
     grid-area: logo;
 }
 
-.button-cast, .button-plot, .button-awards{
+.button-cast, .button-plot, .button-awards {
     margin-left: 50px;
 }
 
@@ -55,19 +71,19 @@ nav{
     grid-area: awards;
 }
 
-main > section.hero{
+main > section.hero {
     height: 300px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     text-align: center;
-  }
+}
 
-  section.bordered-text {
+section.bordered-text {
     border: 5px solid white;
     padding: 10px;
     display: inline-block;
-}  
+}
 
 main > section.plotimage {
     height: 10px;
@@ -82,11 +98,11 @@ main > section.plotimage {
 }
 
 .subheadings {
-    font-size: 2em; /* Adjust size as needed */
-    opacity: 0; /* Start with the header hidden */
-    transform: translateY(-20px); /* Start the header slightly above its final position */
-    animation: fadeInSlideDown 1s ease-out forwards; /* Apply the animation */
-    font-family: "Pirata One", system-ui; 
+    font-size: 2em; 
+    opacity: 0; 
+    transform: translateY(-20px); 
+    animation: fadeInSlideDown 1s ease-out forwards; 
+    font-family: "Pirata One", system-ui;
     font-size: 40px;
     text-align: center;
 }
@@ -113,7 +129,7 @@ main > section.plotimage {
 }
 
 .award2-text, .award4-text {
-    float:left;
+    float: left;
     margin-right: 100px;
 }
 
@@ -161,7 +177,7 @@ main > section.plotimage {
     vertical-align: middle;
 }
 
-.flip-card-front{
+.flip-card-front {
     padding-top: 25px;
 }
 
@@ -169,8 +185,6 @@ main > section.plotimage {
     transform: rotateY(180deg);
 }
 
-
-/* Keyframes for the animation */
 @keyframes fadeInSlideDown {
     from {
         opacity: 0;
@@ -185,36 +199,36 @@ main > section.plotimage {
 .cast {
     display: flex;
     flex-direction: column;
-    gap: 50px; 
+    gap: 50px;
 }
 
 .cast > div {
     display: flex;
-    align-items: center; /* Aligns image and text vertically centered */
+    align-items: center; 
 }
 
 .cast img {
-    width: 300px; /* Adjust the width as needed */
-    height: auto; /* Maintains aspect ratio */
-    margin-right: 15px; /* Adds space between the image and the text */
-    border-radius: 5px; /* Optional: rounds the image corners */
+    width: 300px; 
+    height: auto; 
+    margin-right: 15px; 
+    border-radius: 5px; 
 }
 
 .cast p {
-    margin: 0; /* Removes default paragraph margin for better alignment */
+    margin: 0; 
 }
 
 article, footer {
     font-family: "Cormorant Infant", serif;
 }
 
-article{
+article {
     text-align: center;
     padding: 50px;
     font-size: 25px;
 }
 
-footer{
+footer {
     text-align: center;
     padding-top: 50px;
 }
@@ -241,7 +255,7 @@ footer{
         padding: 20px;
     }
 
-    article{
+    article {
         padding: 20px;
         font-size: 20px;
     }
@@ -259,7 +273,7 @@ footer{
         '. logo .'
         'cast plot awards';
         margin: 40px;
-        grid-template-columns: repeat (3, min-content);
+        grid-template-columns: repeat(3, min-content);
     }
 
     .logo {
