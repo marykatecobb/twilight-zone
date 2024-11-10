@@ -71,7 +71,7 @@ nav a:hover {
     grid-area: awards;
 }
 
-main > section.hero {
+.hero {
     height: 300px;
     display: flex;
     justify-content: space-evenly;
@@ -79,13 +79,13 @@ main > section.hero {
     text-align: center;
 }
 
-section.bordered-text {
+.bordered-text {
     border: 5px solid white;
     padding: 10px;
     display: inline-block;
 }
 
-main > section.plotimage {
+.plotimage {
     height: 10px;
     width: 100%;
     display: block;
@@ -139,9 +139,11 @@ main > section.plotimage {
 }
 
 .trivia {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    justify-items: center;
+    margin: 20px;
 }
 
 .flip-card {
@@ -178,11 +180,12 @@ main > section.plotimage {
 }
 
 .flip-card-front {
-    padding-top: 25px;
+    padding: 25px 10px 0 0;
 }
 
 .flip-card-back {
     transform: rotateY(180deg);
+    padding-top: 5px;
 }
 
 @keyframes fadeInSlideDown {
@@ -237,6 +240,7 @@ footer {
     body {
         font-size: 16px;
         line-height: 1.5;
+        overflow-x: hidden;
     }
 
     nav {
@@ -250,7 +254,7 @@ footer {
         margin-top: 10px;
     }
 
-    main > section.hero {
+    .hero {
         height: auto;
         padding: 20px;
     }
@@ -260,27 +264,160 @@ footer {
         font-size: 20px;
     }
 
-    section.bordered-text {
+    .bordered-text {
         padding: 15px;
     }
 }
 
 @media (max-width: 500px) {
+    body {
+        font-size: 14px; 
+        overflow-x: hidden;
+        max-height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
     nav {
-        max-width: 100vw;
         display: grid;
         grid-template-areas: 
-        '. logo .'
-        'cast plot awards';
-        margin: 40px;
-        grid-template-columns: repeat(3, min-content);
+            '. logo .'
+            'cast plot awards'; 
+        margin: 20px;
+        grid-template-columns: 0.3fr 0.3fr 0.3fr; 
     }
 
-    .logo {
-        
+    nav a {
+        display: block; 
+        text-align: center; 
+        margin-bottom: 5px; 
     }
 
-    .button-plot {
-        padding-left: 20px;
+    .button-cast, .button-plot, .button-awards {
+        margin: 10px 0; 
+    }
+
+    .header-container {
+        margin-bottom: 10px;
+    }
+
+    .header-image {
+        width: 100%; 
+        height: auto;
+    }
+
+    .hero {
+        height: auto;
+        padding: 10px;
+        flex-direction: column; 
+    }
+
+    .subheadings {
+        font-size: 1.5em;
+    }
+    
+    .plotimage {
+        min-height: auto;
+        padding: 0; 
+        background-size: cover;
+        margin: 0;
+        width: 100%;
+    }
+
+    .bordered-text {
+        font-size: 1rem; 
+        max-width: 90%; 
+        margin: 0 auto; 
+        padding: 10px;
+        line-height: 1.4; 
+        word-wrap: break-word; 
+    }
+    
+    .awards {
+        display: grid;
+        grid-template-columns: 1fr; 
+        grid-gap: 100px; 
+        font-size: 14px; 
+        text-align: center; 
+        margin-bottom: 100px;
+    }
+
+    .award1, .award2, .award3, .award4 {
+        display: flex;
+        align-items: center; 
+        justify-content: center; 
+    }
+
+    .award1-image, .award2-image, .award3-image, .award4-image {
+        width: 100px; 
+        height: auto;
+        margin: 10px;
+    }
+
+    .award1-text, .award2-text, .award3-text, .award4-text {
+        text-align: left; 
+        margin: 0;
+        width: 100px;
+        height: 50px;
+    }
+
+    .trivia {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto; 
+    }
+
+    .flip-card {
+        width: 90%; 
+        max-width: 250px; 
+        margin-bottom: 20px; 
+    }
+
+    .flip-card-front, .flip-card-back {
+        font-size: 1.3rem;
+    }
+    
+    .cast {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px; 
+        margin: 0 auto; 
+    }
+
+    .cast > div {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        text-align: center;
+        width: 90%; 
+        margin: 0 auto;
+    }
+
+    .cast img {
+        width: 100%; 
+        max-width: 200px; 
+        height: auto;
+        margin-bottom: 10px; 
+        border-radius: 5px;
+    }
+
+    .cast p {
+        font-size: 14px; 
+        margin: 0; 
+    }
+
+    article {
+        padding: 20px;
+        font-size: 18px; 
+    }
+
+    footer {
+        font-size: 14px; 
+        padding: 10px 0; 
+        margin-bottom: 0;
+        position: relative;
+        clear: both;
     }
 }
